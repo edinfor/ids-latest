@@ -12,9 +12,7 @@ import {
   Optional,
   AfterViewChecked,
   ChangeDetectionStrategy,
-  ChangeDetectorRef,
-  SimpleChange,
-  OnChanges
+  ChangeDetectorRef
 } from '@angular/core';
 
 import {
@@ -30,7 +28,7 @@ import {
   template: '<ng-content></ng-content>',
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class SohoDropDownComponent implements AfterViewInit, AfterViewChecked, OnDestroy, OnChanges {
+export class SohoDropDownComponent implements AfterViewInit, AfterViewChecked, OnDestroy {
   /**
    * Used to provide unnamed controls with a unique id.
    */
@@ -62,6 +60,8 @@ export class SohoDropDownComponent implements AfterViewInit, AfterViewChecked, O
   private options: SohoDropDownOptions = {
     reload: 'none'
   };
+
+  private isReadOnly?: boolean = undefined;
 
   /**
    * Sets the dropdown to close on selecting a value (helpful for multi-select)
@@ -457,8 +457,21 @@ export class SohoDropDownComponent implements AfterViewInit, AfterViewChecked, O
     return this.options.multiple;
   }
 
-  @HostBinding('attr.readonly') @Input()
-  readonly: boolean | undefined;
+  @Input()
+  public set readonly(readonly: boolean | undefined) {
+    this.isReadOnly = readonly;
+    if (this.dropdown) {
+      if (readonly) {
+        this.dropdown.readonly();
+      } else if (readonly === false) {
+        this.dropdown.enable();
+      }
+    }
+  }
+
+  get readonly(): boolean | undefined {
+    return this.isReadOnly;
+  }
 
   /**
    * Creates an instance of SohoDropDownComponent.
@@ -521,20 +534,15 @@ export class SohoDropDownComponent implements AfterViewInit, AfterViewChecked, O
         // execute updated after angular has generated
         // the model and the view markup.
         setTimeout(() => this.updated());
-        this.runUpdatedOnCheck = false;
-      });
-    }
-  }
 
-  ngOnChanges(changes: any) {
-    if (changes['readonly']) {
-      this.ngZone.runOutsideAngular(() => {
         if (this.readonly) {
           this.dropdown?.readonly();
-        } else {
+        } else if (this.readonly === false) {
           this.dropdown?.enable();
         }
-      })
+
+        this.runUpdatedOnCheck = false;
+      });
     }
   }
 

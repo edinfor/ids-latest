@@ -1,9 +1,26 @@
 # What's New with Enterprise-NG
 
-## 15.2.0
+## 16.4.1
 
-### 15.2.0 Fixes
+### 16.4.1 Fixes
 
+- `[Images]` Added an example page for Image with click handler. ([EP#7007](https://github.com/infor-design/enterprise/issues/7007))
+- `[Lookup]` Updated example page for datagrid editor. ([#7403](https://github.com/infor-design/enterprise/issues/7403))
+- `[General] Added 4.84.0 EP version.
+
+## 16.3.1
+
+### 16.3.1 Features / Fixes
+
+- `[Weekview]` Added stacked view wrapper and example. ([#7373](https://github.com/infor-design/enterprise/issues/7373))
+- `[Card]` Added new settings and typings for card component. ([#7379](https://github.com/infor-design/enterprise/issues/7379))
+- `[General]` Added new NG 16 to the library. ([1481](https://github.com/infor-design/enterprise/issues/1481))
+
+## 15.3.0
+
+### 15.3.0 Fixes
+
+- `[ApplicationMenu]` Changed the app menu hamburger icon. ([1470](https://github.com/infor-design/enterprise/issues/1470))
 - `[Modal]` Added Example Page with Datepicker. ([EP#7144](https://github.com/infor-design/enterprise/issues/7144))
 - `[Pager]` Fixes a bug hiding and showing the page size selector. ([#1459](https://github.com/infor-design/enterprise/issues/1459))
 - `[Textarea]` Added Example Page with Textarea Toggle Dirty. ([#1429](https://github.com/infor-design/enterprise-ng/issues/1429))

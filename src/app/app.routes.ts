@@ -40,6 +40,7 @@ import { CardsDemoComponent } from './cards/cards.demo';
 import { CardsExpandableDemoComponent } from './cards/cards-expandable.demo';
 import { CardsMultiSelectDemoComponent } from './cards/cards-multi-select.demo';
 import { CardsSingleSelectDemoComponent } from './cards/cards-single-select.demo';
+import { CardsWorkspaceWidgetsComponent } from './cards/cards-workspace-widgets.demo';
 import { ChartDemoComponent } from './chart/chart.demo';
 import { CheckBoxDemoComponent } from './checkbox/checkbox.demo';
 import { CirclepagerDemoComponent } from './circlepager/circlepager.demo';
@@ -228,6 +229,7 @@ import { DataGridSummaryRowDemoComponent } from './datagrid/datagrid-summary-row
 import { DropdownMultiselectAttributesDemoComponent } from './dropdown/dropdown-multiselect-attributes-demo';
 import { DataGridVerticalScrollDemoComponent } from './datagrid/datagrid-vertical-scroll-to-end.demo';
 import { LookupSourceDemoComponent } from './lookup/lookup-source.demo';
+import { ImagesExampleDemoComponent } from './images/images-example.demo';
 import { InputClearableDemoComponent } from './input/input-clearable.demo';
 import { ListViewContextDemoComponent } from './listview/listview-context.demo';
 import { HeaderDefaultContentDemoComponent } from './header/header-default-content.demo';
@@ -284,6 +286,7 @@ export const routes: Routes = [
   { path: 'cards-expandable', component: CardsExpandableDemoComponent },
   { path: 'cards-multi-select', component: CardsMultiSelectDemoComponent },
   { path: 'cards-single-select', component: CardsSingleSelectDemoComponent },
+  { path: 'cards-workspace-widgets', component: CardsWorkspaceWidgetsComponent },
   { path: 'chart', component: ChartDemoComponent },
   { path: 'checkbox', component: CheckBoxDemoComponent },
   { path: 'circlepager', component: CirclepagerDemoComponent },
@@ -388,6 +391,7 @@ export const routes: Routes = [
   { path: 'homepage-scenario-c', component: HomePageScenarioCDemoComponent },
   { path: 'hyperlink', component: HyperlinkDemoComponent },
   { path: 'icon', component: IconDemoComponent },
+  { path: 'images-example', component: ImagesExampleDemoComponent },
   { path: 'input-clearable', component: InputClearableDemoComponent },
   { path: 'label', component: LabelDemoComponent },
   { path: 'line', component: LineDemoComponent },
